@@ -13,9 +13,9 @@ BaselineOfUkulele >> baseline: spec [
 			baseline: 'SimplePersistence' with: [
 				spec
 					repository: 'github://seandenigris/Simple-Persistence' ];
-			baseline: 'PharoEnhancements' with: [
-				spec repository: 'github://seandenigris/Pharo-Enhancements' ].
+			baseline: 'ResourcesLive' with: [
+				spec repository: 'github://seandenigris/ResourcesLive' ].
 		spec package: #Ukulele with: [
-				spec requires: #('SimplePersistence' 'PharoEnhancements'). ]. ].
+				spec requires: #('SimplePersistence' 'ResourcesLive'). ]. ].
 
 ]
