@@ -11,7 +11,7 @@ Class {
 	#classInstVars : [
 		'db'
 	],
-	#category : #Ukelele
+	#category : #Ukulele
 }
 
 { #category : #accessing }

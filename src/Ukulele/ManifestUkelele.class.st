@@ -4,7 +4,7 @@ I store metadata for this package. These meta data are used by other tools such 
 Class {
 	#name : #ManifestUkelele,
 	#superclass : #PackageManifest,
-	#category : #'Ukelele-Manifest'
+	#category : #'Ukulele-Manifest'
 }
 
 { #category : #'code-critics' }

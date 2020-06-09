@@ -7,7 +7,7 @@ Class {
 		'areChangesPinpointed',
 		'isTransposable'
 	],
-	#category : #Ukelele
+	#category : #Ukulele
 }
 
 { #category : #'as yet unclassified' }
