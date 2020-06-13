@@ -9,5 +9,5 @@ Class {
 
 { #category : #'code-critics' }
 ManifestUkelele class >> ruleRefersToClassRuleV1FalsePositive [
-	^ #(#(#(#RGMethodDefinition #(#'UkSong class' #exampleAddSong #true)) #'2020-06-09T13:17:42.787333-04:00') #(#(#RGMethodDefinition #(#'UkLesson class' #exampleAddLesson #true)) #'2020-06-09T13:19:13.019522-04:00') )
+	^ #(#(#(#RGMethodDefinition #(#'UkSong class' #exampleAddSong #true)) #'2020-06-09T13:17:42.787333-04:00') #(#(#RGMethodDefinition #(#'UkLesson class' #exampleAddLesson #true)) #'2020-06-09T13:19:13.019522-04:00') #(#(#RGMethodDefinition #(#'UkTabProvider class' #example #true)) #'2020-06-11T12:34:29.601156-04:00') )
 ]

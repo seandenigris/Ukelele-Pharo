@@ -26,6 +26,31 @@ UkLesson class >> exampleAddLesson [
 	UkLesson db add: lesson
 ]
 
+{ #category : #'magritte-accessing' }
+UkLesson >> descriptionName [
+	<magritteDescription>
+	^ MAStringDescription new
+		accessor: #name;
+		yourself
+]
+
+{ #category : #'magritte-accessing' }
+UkLesson >> descriptionUrl [
+	<magritteDescription>
+	^ MAUrlDescription new
+		accessor: #url;
+		yourself
+]
+
+{ #category : #'as yet unclassified' }
+UkLesson >> descriptionView [
+	<magritteActionDescription>
+	^ MAActionDescription new
+			action: #view;
+			priority: 100;
+			yourself
+]
+
 { #category : #accessing }
 UkLesson >> name [
 	^ name
