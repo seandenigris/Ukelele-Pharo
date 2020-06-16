@@ -5,8 +5,7 @@ Class {
 		'url',
 		'hasFloatingChords',
 		'areChangesPinpointed',
-		'isTransposable',
-		'provider'
+		'isTransposable'
 	],
 	#category : #Ukulele
 }
@@ -96,12 +95,7 @@ UkTabs >> isTransposableDescription [
 
 { #category : #private }
 UkTabs >> provider [
-	^ self maLazyFrom: self providerDescription
-]
-
-{ #category : #private }
-UkTabs >> provider: anObject [
-	provider := anObject
+	^ self defaultProvider
 ]
 
 { #category : #'magritte-accessing' }
@@ -147,4 +141,13 @@ UkTabs >> urlDescription [
 { #category : #viewing }
 UkTabs >> view [
 	^ Smalltalk tools webBrowser openOn: self url.
+]
+
+{ #category : #viewing }
+UkTabs >> viewDescription [
+	<magritteActionDescription>
+	^ MAActionDescription new
+			action: #view;
+			priority: 100;
+			yourself
 ]

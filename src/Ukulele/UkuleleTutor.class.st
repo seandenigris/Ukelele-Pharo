@@ -23,7 +23,7 @@ UkuleleTutor class >> open [
 	^ self instance inspect.
 ]
 
-{ #category : #accessing }
+{ #category : #private }
 UkuleleTutor >> ensureTabProviderAt: aUrl [
 	^ self tabProviders
 			detect: [ :e | e servesURL: aUrl ]
@@ -33,7 +33,7 @@ UkuleleTutor >> ensureTabProviderAt: aUrl [
 
 { #category : #accessing }
 UkuleleTutor >> lessons [
-	^ lessons
+	^ self maLazyFrom: self lessonsDescription
 ]
 
 { #category : #accessing }
@@ -41,9 +41,18 @@ UkuleleTutor >> lessons: anObject [
 	lessons := anObject
 ]
 
+{ #category : #'magritte-accessing' }
+UkuleleTutor >> lessonsDescription [
+	<magritteDescription>
+	^ MAToManyRelationDescription new
+		accessor: #lessons;
+		classes: { UkLesson };
+		yourself
+]
+
 { #category : #accessing }
 UkuleleTutor >> songs [
-	^ songs
+	^ self maLazyFrom: self songsDescription
 ]
 
 { #category : #accessing }
@@ -51,12 +60,30 @@ UkuleleTutor >> songs: anObject [
 	songs := anObject
 ]
 
+{ #category : #'magritte-accessing' }
+UkuleleTutor >> songsDescription [
+	<magritteDescription>
+	^ MAToManyRelationDescription new
+		accessor: #songs;
+		classes: { UkSong };
+		yourself
+]
+
 { #category : #accessing }
 UkuleleTutor >> tabProviders [
-	^ tabProviders ifNil: [ tabProviders := OrderedCollection new ]
+	^ self maLazyFrom: self tabProvidersDescription
 ]
 
 { #category : #accessing }
 UkuleleTutor >> tabProviders: anObject [
 	tabProviders := anObject
+]
+
+{ #category : #'magritte-accessing' }
+UkuleleTutor >> tabProvidersDescription [
+	<magritteDescription>
+	^ MAToManyRelationDescription new
+		accessor: #tabProviders;
+		classes: { UkTabProvider };
+		yourself
 ]
