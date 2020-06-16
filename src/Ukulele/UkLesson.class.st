@@ -5,25 +5,16 @@ Class {
 		'name',
 		'url'
 	],
-	#classInstVars : [
-		'db'
-	],
 	#category : #Ukulele
 }
 
-{ #category : #accessing }
-UkLesson class >> db [
-	^ db ifNil: [ db := OrderedCollection new ]
-]
-
 { #category : #examples }
-UkLesson class >> exampleAddLesson [
+UkLesson class >> example [
+	<sampleInstance>
 	
-	| lesson |
-	lesson := UkLesson new
+	^ UkLesson new
 		url: 'https://youtu.be/Ailz-IgzeM4' asUrl;
 		yourself.
-	UkLesson db add: lesson
 ]
 
 { #category : #accessing }

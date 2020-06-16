@@ -8,24 +8,11 @@ Class {
 		'original',
 		'tabs'
 	],
-	#classInstVars : [
-		'db'
-	],
 	#category : #Ukulele
 }
 
-{ #category : #accessing }
-UkSong class >> db [
-	^ db ifNil: [ db := OrderedCollection new ]
-]
-
 { #category : #examples }
-UkSong class >> exampleAddSong [
-	UkSong db add: self sampleSong
-]
-
-{ #category : #examples }
-UkSong class >> exampleSong [
+UkSong class >> example [
 	<sampleInstance>
 	^ UkSong new
 		name: 'I''m Yours';

@@ -12,6 +12,38 @@ Class {
 	#category : #Ukulele
 }
 
+{ #category : #'as yet unclassified' }
+UkuleleTutor class >> exampleAddLesson [
+	<sampleInstance>
+	| result |
+	result := UkuleleTutor exampleInstance.
+	result lessons add: UkLesson example.
+	^ result
+]
+
+{ #category : #'as yet unclassified' }
+UkuleleTutor class >> exampleAddProvider [
+	<sampleInstance>
+	| result |
+	result := UkuleleTutor exampleInstance.
+	result tabProviders add: UkTabProvider example.
+	^ result
+]
+
+{ #category : #'as yet unclassified' }
+UkuleleTutor class >> exampleAddSong [
+	<sampleInstance>
+	| result |
+	result := UkuleleTutor exampleInstance.
+	result songs add: UkSong example.
+	^ result
+]
+
+{ #category : #'instance creation' }
+UkuleleTutor class >> exampleInstance [
+	^ self new
+]
+
 { #category : #'instance creation' }
 UkuleleTutor class >> instance [
 	^ UniqueInstance ifNil: [ UniqueInstance := self new ]
@@ -47,6 +79,7 @@ UkuleleTutor >> lessonsDescription [
 	^ MAToManyRelationDescription new
 		accessor: #lessons;
 		classes: { UkLesson };
+		default: Bag new;
 		yourself
 ]
 
@@ -66,6 +99,7 @@ UkuleleTutor >> songsDescription [
 	^ MAToManyRelationDescription new
 		accessor: #songs;
 		classes: { UkSong };
+		default: Bag new;
 		yourself
 ]
 
@@ -85,5 +119,6 @@ UkuleleTutor >> tabProvidersDescription [
 	^ MAToManyRelationDescription new
 		accessor: #tabProviders;
 		classes: { UkTabProvider };
+		default: Bag new;
 		yourself
 ]
