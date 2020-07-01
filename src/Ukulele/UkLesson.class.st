@@ -5,7 +5,7 @@ Class {
 		'name',
 		'url'
 	],
-	#category : #Ukulele
+	#category : #'Ukulele-Core'
 }
 
 { #category : #examples }

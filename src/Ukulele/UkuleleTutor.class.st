@@ -9,10 +9,10 @@ Class {
 	#classVars : [
 		'UniqueInstance'
 	],
-	#category : #Ukulele
+	#category : #'Ukulele-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 UkuleleTutor class >> exampleAddLesson [
 	<sampleInstance>
 	| result |
@@ -21,7 +21,7 @@ UkuleleTutor class >> exampleAddLesson [
 	^ result
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 UkuleleTutor class >> exampleAddProvider [
 	<sampleInstance>
 	| result |
@@ -30,7 +30,7 @@ UkuleleTutor class >> exampleAddProvider [
 	^ result
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 UkuleleTutor class >> exampleAddSong [
 	<sampleInstance>
 	| result |
@@ -39,7 +39,7 @@ UkuleleTutor class >> exampleAddSong [
 	^ result
 ]
 
-{ #category : #'instance creation' }
+{ #category : #examples }
 UkuleleTutor class >> exampleInstance [
 	^ self new
 ]
@@ -53,6 +53,17 @@ UkuleleTutor class >> instance [
 UkuleleTutor class >> open [
 	<script>
 	^ self instance inspect.
+]
+
+{ #category : #persistence }
+UkuleleTutor class >> restoreFrom: anObject [
+
+	UniqueInstance := anObject.
+]
+
+{ #category : #persistence }
+UkuleleTutor class >> spData [
+	^ UniqueInstance
 ]
 
 { #category : #private }

@@ -6,7 +6,7 @@ Class {
 		'hasFloatingChords',
 		'isTransposable'
 	],
-	#category : #Ukulele
+	#category : #'Ukulele-Core'
 }
 
 { #category : #example }

@@ -8,7 +8,7 @@ Class {
 		'original',
 		'tabs'
 	],
-	#category : #Ukulele
+	#category : #'Ukulele-Core'
 }
 
 { #category : #examples }
