@@ -1,5 +1,5 @@
 Class {
-	#name : #UkLesson,
+	#name : #UkeLesson,
 	#superclass : #Object,
 	#instVars : [
 		'name',
@@ -9,26 +9,26 @@ Class {
 }
 
 { #category : #examples }
-UkLesson class >> example [
+UkeLesson class >> example [
 	<sampleInstance>
 	
-	^ UkLesson new
+	^ UkeLesson new
 		url: 'https://youtu.be/Ailz-IgzeM4' asUrl;
 		yourself.
 ]
 
 { #category : #accessing }
-UkLesson >> name [
+UkeLesson >> name [
 	^ name
 ]
 
 { #category : #accessing }
-UkLesson >> name: anObject [
+UkeLesson >> name: anObject [
 	name := anObject
 ]
 
 { #category : #'magritte-accessing' }
-UkLesson >> nameDescription [
+UkeLesson >> nameDescription [
 	<magritteDescription>
 	^ MAStringDescription new
 		accessor: #name;
@@ -36,17 +36,17 @@ UkLesson >> nameDescription [
 ]
 
 { #category : #accessing }
-UkLesson >> url [
+UkeLesson >> url [
 	^ url
 ]
 
 { #category : #accessing }
-UkLesson >> url: anObject [
+UkeLesson >> url: anObject [
 	url := anObject
 ]
 
 { #category : #'magritte-accessing' }
-UkLesson >> urlDescription [
+UkeLesson >> urlDescription [
 	<magritteDescription>
 	^ MAUrlDescription new
 		accessor: #url;
@@ -54,12 +54,12 @@ UkLesson >> urlDescription [
 ]
 
 { #category : #'as yet unclassified' }
-UkLesson >> view [
+UkeLesson >> view [
 	^ Smalltalk tools webBrowser openOn: self url.
 ]
 
 { #category : #'as yet unclassified' }
-UkLesson >> viewDescription [
+UkeLesson >> viewDescription [
 	<magritteActionDescription>
 	^ MAActionDescription new
 			action: #view;

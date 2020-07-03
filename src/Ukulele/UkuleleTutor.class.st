@@ -17,7 +17,7 @@ UkuleleTutor class >> exampleAddLesson [
 	<sampleInstance>
 	| result |
 	result := UkuleleTutor exampleInstance.
-	result lessons add: UkLesson example.
+	result lessons add: UkeLesson example.
 	^ result
 ]
 
@@ -26,7 +26,7 @@ UkuleleTutor class >> exampleAddProvider [
 	<sampleInstance>
 	| result |
 	result := UkuleleTutor exampleInstance.
-	result tabProviders add: UkTabProvider example.
+	result tabProviders add: UkeTabProvider example.
 	^ result
 ]
 
@@ -35,7 +35,7 @@ UkuleleTutor class >> exampleAddSong [
 	<sampleInstance>
 	| result |
 	result := UkuleleTutor exampleInstance.
-	result songs add: UkSong example.
+	result songs add: UkeSong example.
 	^ result
 ]
 
@@ -71,7 +71,7 @@ UkuleleTutor >> ensureTabProviderAt: aUrl [
 	^ self tabProviders
 			detect: [ :e | e servesURL: aUrl ]
 			ifNone: [ 
-				self tabProviders add: (UkTabProvider new url: aUrl; yourself) ]
+				self tabProviders add: (UkeTabProvider new url: aUrl; yourself) ]
 ]
 
 { #category : #accessing }
@@ -89,7 +89,7 @@ UkuleleTutor >> lessonsDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
 		accessor: #lessons;
-		classes: { UkLesson };
+		classes: { UkeLesson };
 		default: Bag new;
 		yourself
 ]
@@ -109,7 +109,7 @@ UkuleleTutor >> songsDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
 		accessor: #songs;
-		classes: { UkSong };
+		classes: { UkeSong };
 		default: Bag new;
 		yourself
 ]
@@ -129,7 +129,7 @@ UkuleleTutor >> tabProvidersDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
 		accessor: #tabProviders;
-		classes: { UkTabProvider };
+		classes: { UkeTabProvider };
 		default: Bag new;
 		yourself
 ]

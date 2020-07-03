@@ -1,5 +1,5 @@
 Class {
-	#name : #UkSong,
+	#name : #UkeSong,
 	#superclass : #Object,
 	#instVars : [
 		'name',
@@ -12,26 +12,26 @@ Class {
 }
 
 { #category : #examples }
-UkSong class >> example [
+UkeSong class >> example [
 	<sampleInstance>
-	^ UkSong new
+	^ UkeSong new
 		name: 'I''m Yours';
 		author: 'Jason Mraz';
 		yourself.
 ]
 
 { #category : #accessing }
-UkSong >> author [
+UkeSong >> author [
 	^ author
 ]
 
 { #category : #accessing }
-UkSong >> author: anObject [
+UkeSong >> author: anObject [
 	author := anObject
 ]
 
 { #category : #'magritte-accessing' }
-UkSong >> authorDescription [
+UkeSong >> authorDescription [
 	<magritteDescription>
 	^ MAStringDescription new
 		accessor: #author;
@@ -39,17 +39,17 @@ UkSong >> authorDescription [
 ]
 
 { #category : #accessing }
-UkSong >> lessons [
+UkeSong >> lessons [
 	^ lessons ifNil: [ lessons := OrderedCollection new ]
 ]
 
 { #category : #accessing }
-UkSong >> lessons: anObject [
+UkeSong >> lessons: anObject [
 	lessons := anObject
 ]
 
 { #category : #'magritte-accessing' }
-UkSong >> lessonsDescription [
+UkeSong >> lessonsDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
 		accessor: #lessons;
@@ -57,17 +57,17 @@ UkSong >> lessonsDescription [
 ]
 
 { #category : #accessing }
-UkSong >> name [
+UkeSong >> name [
 	^ name
 ]
 
 { #category : #accessing }
-UkSong >> name: anObject [
+UkeSong >> name: anObject [
 	name := anObject
 ]
 
 { #category : #'magritte-accessing' }
-UkSong >> nameDescription [
+UkeSong >> nameDescription [
 	<magritteDescription>
 	^ MAStringDescription new
 		accessor: #name;
@@ -75,17 +75,17 @@ UkSong >> nameDescription [
 ]
 
 { #category : #accessing }
-UkSong >> original [
+UkeSong >> original [
 	^ original
 ]
 
 { #category : #accessing }
-UkSong >> original: anObject [
+UkeSong >> original: anObject [
 	original := anObject
 ]
 
 { #category : #'magritte-accessing' }
-UkSong >> originalDescription [
+UkeSong >> originalDescription [
 	<magritteDescription>
 	^ MAUrlDescription new
 		accessor: #original;
@@ -93,12 +93,12 @@ UkSong >> originalDescription [
 ]
 
 { #category : #accessing }
-UkSong >> playOriginal [
+UkeSong >> playOriginal [
 	^ Smalltalk tools webBrowser openOn: original.
 ]
 
 { #category : #accessing }
-UkSong >> playOriginalDescription [
+UkeSong >> playOriginalDescription [
 	<magritteActionDescription>
 	^ MAActionDescription new
 			action: #playOriginal;
@@ -107,7 +107,7 @@ UkSong >> playOriginalDescription [
 ]
 
 { #category : #printing }
-UkSong >> printOn: aStream [
+UkeSong >> printOn: aStream [
 	
 	aStream
 		nextPutAll: (name surroundedBy: '"');
@@ -116,33 +116,33 @@ UkSong >> printOn: aStream [
 ]
 
 { #category : #accessing }
-UkSong >> tabs [
+UkeSong >> tabs [
 	^ tabs
 ]
 
 { #category : #accessing }
-UkSong >> tabs: anObject [
+UkeSong >> tabs: anObject [
 	tabs := anObject
 ]
 
 { #category : #'magritte-accessing' }
-UkSong >> tabsDescription [
+UkeSong >> tabsDescription [
 	<magritteDescription>
 	^ MAToOneRelationDescription new
 		accessor: #tabs;
-		classes: (Set new add: UkTabs; yourself);
+		classes: (Set new add: UkeTabs; yourself);
 		yourself
 ]
 
 { #category : #accessing }
-UkSong >> viewDashboard [
+UkeSong >> viewDashboard [
 	self playOriginal.
 	self tabs view.
 	self lessons first view
 ]
 
 { #category : #accessing }
-UkSong >> viewDashboardDescription [
+UkeSong >> viewDashboardDescription [
 	<magritteActionDescription>
 	^ MAActionDescription new
 			action: #viewDashboard;

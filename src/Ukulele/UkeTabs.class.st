@@ -1,5 +1,5 @@
 Class {
-	#name : #UkTabs,
+	#name : #UkeTabs,
 	#superclass : #Object,
 	#instVars : [
 		'url',
@@ -11,8 +11,8 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-UkTabs class >> exampleCreating [
-	^ UkTabs new
+UkeTabs class >> exampleCreating [
+	^ UkeTabs new
 			url: 'https://www.ukulele-tabs.com/uke-songs/uke-songs/jason-mraz/im-yours-uke-tab-11804.html' asUrl;
 			areChangesPinpointed: false;
 			hasFloatingChords: true;
@@ -21,17 +21,17 @@ UkTabs class >> exampleCreating [
 ]
 
 { #category : #accessing }
-UkTabs >> areChangesPinpointed [
+UkeTabs >> areChangesPinpointed [
 	^ areChangesPinpointed
 ]
 
 { #category : #accessing }
-UkTabs >> areChangesPinpointed: anObject [
+UkeTabs >> areChangesPinpointed: anObject [
 	areChangesPinpointed := anObject
 ]
 
 { #category : #'magritte-accessing' }
-UkTabs >> areChangesPinpointedDescription [
+UkeTabs >> areChangesPinpointedDescription [
 	<magritteDescription>
 	^ MABooleanDescription new
 		accessor: #areChangesPinpointed;
@@ -40,7 +40,7 @@ UkTabs >> areChangesPinpointedDescription [
 ]
 
 { #category : #private }
-UkTabs >> defaultProvider [
+UkeTabs >> defaultProvider [
 	self url ifNil: [ ^ nil ].
 	^ UkuleleTutor instance tabProviders
 			detect: [ :e | e servesURL: self url ]
@@ -48,20 +48,20 @@ UkTabs >> defaultProvider [
 ]
 
 { #category : #accessing }
-UkTabs >> hasFloatingChords [
+UkeTabs >> hasFloatingChords [
 	^ self provider
 		ifNotNil: [ :p | p hasFloatingChords ]
 		ifNil: [ hasFloatingChords ]
 ]
 
 { #category : #accessing }
-UkTabs >> hasFloatingChords: anObject [
+UkeTabs >> hasFloatingChords: anObject [
 	hasFloatingChords := anObject.
 	self updateTabProvider: [ :tp | tp hasFloatingChords: hasFloatingChords ].
 ]
 
 { #category : #'magritte-accessing' }
-UkTabs >> hasFloatingChordsDescription [
+UkeTabs >> hasFloatingChordsDescription [
 	<magritteDescription>
 	^ MABooleanDescription new
 		accessor: #hasFloatingChords;
@@ -71,20 +71,20 @@ UkTabs >> hasFloatingChordsDescription [
 ]
 
 { #category : #accessing }
-UkTabs >> isTransposable [
+UkeTabs >> isTransposable [
 	^ self provider
 		ifNotNil: [ :p | p isTransposable ]
 		ifNil: [ isTransposable ]
 ]
 
 { #category : #accessing }
-UkTabs >> isTransposable: aBoolean [
+UkeTabs >> isTransposable: aBoolean [
 	isTransposable := aBoolean.
 	self updateTabProvider: [ :tp | tp isTransposable: isTransposable ].
 ]
 
 { #category : #'magritte-accessing' }
-UkTabs >> isTransposableDescription [
+UkeTabs >> isTransposableDescription [
 	<magritteDescription>
 	^ MABooleanDescription new
 		accessor: #isTransposable;
@@ -94,18 +94,18 @@ UkTabs >> isTransposableDescription [
 ]
 
 { #category : #private }
-UkTabs >> provider [
+UkeTabs >> provider [
 	^ self defaultProvider
 ]
 
 { #category : #'magritte-accessing' }
-UkTabs >> providerDescription [
+UkeTabs >> providerDescription [
 	<magritteDescription>
 	^ MAToOneRelationDescription new
 		accessor: #provider;
 		classes:
 			(Set new
-				add: UkTabProvider;
+				add: UkeTabProvider;
 				yourself);
 		default: self defaultProvider;
 		beReadonly;
@@ -113,24 +113,24 @@ UkTabs >> providerDescription [
 ]
 
 { #category : #private }
-UkTabs >> updateTabProvider: aBlock [
+UkeTabs >> updateTabProvider: aBlock [
 
 	self provider ifNotNil: [ :p | aBlock value: p ]
 ]
 
 { #category : #accessing }
-UkTabs >> url [
+UkeTabs >> url [
 	^ url
 ]
 
 { #category : #accessing }
-UkTabs >> url: aUrl [
+UkeTabs >> url: aUrl [
 	url := aUrl.
 	self updateTabProvider: [ :e | ]
 ]
 
 { #category : #'magritte-accessing' }
-UkTabs >> urlDescription [
+UkeTabs >> urlDescription [
 	<magritteDescription>
 	^ MAUrlDescription new
 		accessor: #url;
@@ -139,12 +139,12 @@ UkTabs >> urlDescription [
 ]
 
 { #category : #viewing }
-UkTabs >> view [
+UkeTabs >> view [
 	^ Smalltalk tools webBrowser openOn: self url.
 ]
 
 { #category : #viewing }
-UkTabs >> viewDescription [
+UkeTabs >> viewDescription [
 	<magritteActionDescription>
 	^ MAActionDescription new
 			action: #view;
