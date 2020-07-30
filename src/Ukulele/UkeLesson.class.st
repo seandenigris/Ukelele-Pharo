@@ -53,12 +53,12 @@ UkeLesson >> urlDescription [
 		yourself
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #viewing }
 UkeLesson >> view [
 	^ Smalltalk tools webBrowser openOn: self url.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'magritte-accessing' }
 UkeLesson >> viewDescription [
 	<magritteActionDescription>
 	^ MAActionDescription new

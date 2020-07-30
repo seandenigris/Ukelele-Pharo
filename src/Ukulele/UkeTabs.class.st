@@ -103,12 +103,13 @@ UkeTabs >> providerDescription [
 	<magritteDescription>
 	^ MAToOneRelationDescription new
 		accessor: #provider;
+		beReadOnly;
+		priority: 500;
 		classes:
 			(Set new
 				add: UkeTabProvider;
 				yourself);
 		default: self defaultProvider;
-		beReadonly;
 		yourself
 ]
 

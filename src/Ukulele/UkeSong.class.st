@@ -53,6 +53,7 @@ UkeSong >> lessonsDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
 		accessor: #lessons;
+		classes: { UkeLesson };
 		yourself
 ]
 

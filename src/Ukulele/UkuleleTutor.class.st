@@ -2,7 +2,6 @@ Class {
 	#name : #UkuleleTutor,
 	#superclass : #Object,
 	#instVars : [
-		'lessons',
 		'songs',
 		'tabProviders'
 	],
@@ -76,12 +75,7 @@ UkuleleTutor >> ensureTabProviderAt: aUrl [
 
 { #category : #accessing }
 UkuleleTutor >> lessons [
-	^ self maLazyFrom: self lessonsDescription
-]
-
-{ #category : #accessing }
-UkuleleTutor >> lessons: anObject [
-	lessons := anObject
+	^ self songs flatCollect: #lessons
 ]
 
 { #category : #'magritte-accessing' }
@@ -89,8 +83,7 @@ UkuleleTutor >> lessonsDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
 		accessor: #lessons;
-		classes: { UkeLesson };
-		default: Bag new;
+		beReadOnly;
 		yourself
 ]
 
