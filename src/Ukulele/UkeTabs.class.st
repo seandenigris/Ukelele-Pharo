@@ -93,6 +93,14 @@ UkeTabs >> isTransposableDescription [
 		yourself
 ]
 
+{ #category : #printing }
+UkeTabs >> printOn: aStream [
+	
+	aStream
+		nextPutAll: 'Tabs: ';
+		maPrint: self urlDescription for: self
+]
+
 { #category : #private }
 UkeTabs >> provider [
 	^ self defaultProvider
@@ -100,7 +108,7 @@ UkeTabs >> provider [
 
 { #category : #'magritte-accessing' }
 UkeTabs >> providerDescription [
-	<magritteDescription>
+	"<magritteDescription>"
 	^ MAToOneRelationDescription new
 		accessor: #provider;
 		beReadOnly;

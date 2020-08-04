@@ -35,6 +35,14 @@ UkeLesson >> nameDescription [
 		yourself
 ]
 
+{ #category : #viewing }
+UkeLesson >> printOn: aStream [
+	
+	aStream
+		nextPutAll: 'Lesson: ';
+		maPrint: self nameDescription for: self
+]
+
 { #category : #accessing }
 UkeLesson >> url [
 	^ url

@@ -35,6 +35,7 @@ UkeSong >> authorDescription [
 	<magritteDescription>
 	^ MAStringDescription new
 		accessor: #author;
+		priority: 200;
 		yourself
 ]
 
@@ -53,6 +54,7 @@ UkeSong >> lessonsDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
 		accessor: #lessons;
+		priority: 400;
 		classes: { UkeLesson };
 		yourself
 ]
@@ -72,6 +74,7 @@ UkeSong >> nameDescription [
 	<magritteDescription>
 	^ MAStringDescription new
 		accessor: #name;
+		priority: 100;
 		yourself
 ]
 
@@ -90,6 +93,7 @@ UkeSong >> originalDescription [
 	<magritteDescription>
 	^ MAUrlDescription new
 		accessor: #original;
+		priority: 300;
 		yourself
 ]
 
@@ -111,9 +115,10 @@ UkeSong >> playOriginalDescription [
 UkeSong >> printOn: aStream [
 	
 	aStream
-		nextPutAll: (name surroundedBy: '"');
-		nextPutAll: ' by ';
-		nextPutAll: self author
+		nextPut: $";
+		maPrint: self nameDescription for: self;
+		nextPutAll: '" by ';
+		maPrint: self authorDescription for: self
 ]
 
 { #category : #accessing }
@@ -132,6 +137,7 @@ UkeSong >> tabsDescription [
 	^ MAToOneRelationDescription new
 		accessor: #tabs;
 		classes: (Set new add: UkeTabs; yourself);
+		priority: 500;
 		yourself
 ]
 
