@@ -73,18 +73,30 @@ UkuleleTutor >> ensureTabProviderAt: aUrl [
 				self tabProviders add: (UkeTabProvider new url: aUrl; yourself) ]
 ]
 
+{ #category : #'magritte-rendering' }
+UkuleleTutor >> html [
+	^ PRHTMLWriter write: self maPillar
+]
+
 { #category : #accessing }
 UkuleleTutor >> lessons [
 	^ self songs flatCollect: #lessons
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : #'magritte-descriptions' }
 UkuleleTutor >> lessonsDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
 		accessor: #lessons;
 		beReadOnly;
 		yourself
+]
+
+{ #category : #'magritte-rendering' }
+UkuleleTutor >> maPillarRenderer [
+	^ super maPillarRenderer
+			objectDescription: (self magritteDescription select: [ :e | e label = 'Songs' ]);
+			yourself.
 ]
 
 { #category : #accessing }
@@ -97,7 +109,7 @@ UkuleleTutor >> songs: anObject [
 	songs := anObject
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : #'magritte-descriptions' }
 UkuleleTutor >> songsDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
@@ -117,9 +129,10 @@ UkuleleTutor >> tabProviders: anObject [
 	tabProviders := anObject
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : #'magritte-descriptions' }
 UkuleleTutor >> tabProvidersDescription [
-	<magritteDescription>
+	"This is really for documentation because there doesn't currently seem to be a use case for examining providers
+	<magritteDescription>"
 	^ MAToManyRelationDescription new
 		accessor: #tabProviders;
 		classes: { UkeTabProvider };
