@@ -16,9 +16,7 @@ BaselineOfUkulele >> baseline: spec [
 	spec for: #'common' do: [
 		spec
 			baseline: 'Magritte' with: [
-				spec 
-					repository: 'github://seandenigris/Magritte';
-					loads: #('Magritte-Pillar') ];
+				spec repository: 'github://seandenigris/Magritte' ];
 			baseline: 'SimplePersistence' with: [
 				spec repository: 'github://seandenigris/Simple-Persistence' ];
 			baseline: 'ResourcesLive' with: [
