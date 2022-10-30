@@ -1,15 +1,15 @@
 Class {
-	#name : 'UkuleleDB',
-	#superclass : 'SpFileDatabase',
+	#name : #UkuleleDB,
+	#superclass : #SpFileDatabase,
 	#category : 'Ukulele-Persistence'
 }
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 UkuleleDB class >> backupDirectoryParent [
 	^ FileLocator dynabookData
 ]
 
-{ #category : 'loading/saving' }
+{ #category : #'loading/saving' }
 UkuleleDB class >> schema [
 
 	^ { UkuleleTutor }.
