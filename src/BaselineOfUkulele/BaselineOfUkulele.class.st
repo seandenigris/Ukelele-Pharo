@@ -15,12 +15,12 @@ BaselineOfUkulele >> baseline: spec [
 
 	spec for: #'common' do: [
 		spec
-			baseline: 'Magritte' with: [
+			baseline: #'Magritte' with: [
 				spec repository: 'github://seandenigris/Magritte' ];
-			baseline: 'SimplePersistence' with: [
+			baseline: #'SimplePersistence' with: [
 				spec repository: 'github://seandenigris/Simple-Persistence' ];
-			baseline: 'ResourcesLive' with: [
+			baseline: #'ResourcesLive' with: [
 				spec repository: 'github://seandenigris/Resources-Live' ].
 		spec package: #Ukulele with: [
-				spec requires: #('Magritte' 'SimplePersistence' 'ResourcesLive'). ]. ].
+				spec requires: #(#'Magritte' #'SimplePersistence' #'ResourcesLive'). ]. ].
 ]
